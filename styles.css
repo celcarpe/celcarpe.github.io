@@ -1,0 +1,563 @@
+/* breakpoints: 1300, 680 */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+*::selection {
+  background-color: #ed6a5a;
+  color: white;
+}
+
+a {
+  text-decoration: none;
+  color: #31081f;
+}
+
+ul {
+  list-style-type: none;
+  padding: 0;
+}
+
+.hobbies em {
+  position: relative;
+}
+
+.hobbies em::before {
+  content: "";
+  position: absolute;
+  z-index: 0;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  color: #31081f;
+  min-height: 100vh;
+  width: 100vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #f1f1e4;
+}
+@media (max-width: 790px) {
+  body {
+    height: 100%;
+    overflow: auto;
+  }
+}
+
+.centered {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+li.main {
+  font-weight: bold;
+  font-size: 1.3em;
+}
+
+span.title {
+  font-size: 1.5em;
+  font-weight: bolder;
+  border-bottom: 2px solid #ed6a5a;
+  margin-bottom: 10px;
+}
+@media only screen and (max-width: 790px) {
+  span.title {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    padding-right: 30px;
+  }
+}
+
+nav {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  max-height: 27px;
+  z-index: 99999;
+  border-radius: 3px;
+}
+@media only screen and (max-width: 790px) {
+  nav {
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  }
+}
+nav ul {
+  display: flex;
+  background-color: #5ca4a9;
+  border-radius: 3px;
+}
+nav ul li {
+  height: 100%;
+  width: 100%;
+}
+nav ul li:first-of-type {
+  border-radius: 3px 0 0 3px;
+  border-right: 0.6px solid #f1f1e4;
+}
+nav ul li:last-of-type {
+  border-radius: 0 3px 3px 0;
+}
+nav ul li:hover {
+  background-color: #28536b;
+  transition: 0.2s all ease;
+}
+nav ul li a {
+  color: #f1f1e4;
+  font-weight: bold;
+  width: 100%;
+  height: 100%;
+  padding: 8px;
+  font-size: 1.2em;
+}
+@media only screen and (max-width: 790px) {
+  nav ul li a {
+    padding: 5px;
+    font-size: 1em;
+  }
+}
+
+div.resume {
+  height: 90vh;
+  min-height: 650px;
+  width: 80%;
+  background-color: #f1f1e4;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  z-index: 0;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+}
+@media only screen and (max-width: 1250px) {
+  div.resume {
+    width: 90%;
+    max-height: 700px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    margin: 20px 0;
+    max-height: none;
+  }
+}
+div.resume header {
+  top: 0;
+  height: 15%;
+  width: 100%;
+  background-color: #ed6a5a;
+  color: #f1f1e4;
+  z-index: 0;
+}
+@media only screen and (max-width: 790px) {
+  div.resume header {
+    z-index: 4;
+  }
+}
+div.resume header h1 {
+  flex-direction: column;
+  z-index: 9999;
+}
+div.resume header h1 span {
+  font-size: 18px;
+}
+@media only screen and (max-width: 790px) {
+  div.resume header h1 {
+    padding: 10px;
+    font-size: 1.8em;
+  }
+}
+div.resume section.experience {
+  height: auto;
+  width: 50%;
+  display: flex;
+  justify-content: flex-end;
+  position: absolute;
+  right: 0;
+  z-index: 4;
+  color: #f1f1e4;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume section.experience {
+    width: 60%;
+  }
+}
+@media only screen and (max-width: 915px) {
+  div.resume section.experience {
+    z-index: 2;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.experience {
+    position: relative;
+    width: 100%;
+    flex-direction: column;
+    z-index: 4;
+  }
+}
+div.resume section.experience div {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 20px;
+  background-color: #28536b;
+}
+div.resume section.experience div:first-of-type {
+  margin-right: 20px;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume section.experience div:first-of-type {
+    margin-right: 0;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  div.resume section.experience div:last-of-type {
+    border-left: 1px solid #ed6a5a;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.experience div:last-of-type {
+    border: none;
+  }
+}
+div.resume section.experience div li:not(.main) {
+  font-size: 0.9em;
+}
+div.resume section.experience div li:first-child {
+  margin-top: 10px;
+}
+div.resume section.experience div li.block::after {
+  content: "";
+  position: relative;
+  display: block;
+  width: 0;
+  height: 2px;
+  bottom: -2px;
+  left: 0;
+  background-color: #ed6a5a;
+  transition: width 0.7s;
+}
+div.resume section.experience div li.block:hover::after {
+  width: 80%;
+}
+div.resume section.hobbies {
+  width: 720px;
+  height: 170px;
+  border-radius: 100px;
+  position: absolute;
+  bottom: 0;
+  left: 5%;
+  background-color: #9bc1bc;
+  z-index: 3;
+  padding-left: 80px;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume section.hobbies {
+    left: 0;
+  }
+}
+@media only screen and (max-width: 915px) {
+  div.resume section.hobbies {
+    z-index: 1;
+    padding-left: 20px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.hobbies {
+    width: 100%;
+    height: auto;
+    position: initial;
+    border-radius: 0;
+    padding: 5px 20px;
+  }
+}
+div.resume section.hobbies::before {
+  content: "";
+  height: 350px;
+  width: 350px;
+  border-radius: 400px;
+  display: block;
+  position: absolute;
+  background-color: #9bc1bc;
+  bottom: 0px;
+  left: 65px;
+  z-index: -2;
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.hobbies::before {
+    display: none;
+  }
+}
+div.resume section.hobbies::after {
+  content: "";
+  height: 300px;
+  width: 300px;
+  border-radius: 300px;
+  display: block;
+  position: absolute;
+  background-color: #9bc1bc;
+  bottom: -30px;
+  left: 350px;
+  z-index: -2;
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.hobbies::after {
+    display: none;
+  }
+}
+@media only screen and (max-width: 915px) {
+  div.resume section.hobbies span.title {
+    margin-left: 20px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.hobbies span.title {
+    margin-left: 0;
+  }
+}
+div.resume section.hobbies ul {
+  margin-top: 10px;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume section.hobbies ul {
+    width: 40%;
+  }
+}
+@media only screen and (max-width: 915px) {
+  div.resume section.hobbies ul {
+    width: 38%;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.hobbies ul {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+div.resume aside.about {
+  width: 40%;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume aside.about {
+    position: relative;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about {
+    position: initial;
+    width: 100%;
+    background-color: #9bc1bc;
+    padding: 5px 20px;
+    z-index: 3;
+  }
+}
+div.resume aside.about::before {
+  content: "";
+  background-color: #5ca4a9;
+  position: absolute;
+  left: -25%;
+  top: -300px;
+  width: 450px;
+  height: 1400px;
+  transform: rotate(35deg);
+  z-index: 3;
+}
+@media only screen and (max-height: 750px) {
+  div.resume aside.about::before {
+    left: -350px;
+    top: -300px;
+  }
+}
+@media only screen and (max-width: 1250px) {
+  div.resume aside.about::before {
+    top: -400px;
+    left: -400px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about::before {
+    content: "";
+    width: 900px;
+    height: 75px;
+    top: 2%;
+    left: -10px;
+    transform: rotate(-6deg);
+    background-color: #ed6a5a;
+    z-index: -1;
+  }
+}
+div.resume aside.about > div.txt {
+  z-index: 4;
+  position: absolute;
+  top: 15%;
+  padding-left: 20px;
+}
+@media only screen and (max-width: 1250px) {
+  div.resume aside.about > div.txt {
+    width: 100%;
+  }
+}
+@media only screen and (max-width: 920px) {
+  div.resume aside.about > div.txt {
+    padding-left: 10px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about > div.txt {
+    position: initial;
+    padding: 0;
+  }
+}
+div.resume aside.about > div.txt ul.contact {
+  margin-bottom: 50px;
+  font-weight: bold;
+  color: #f1f1e4;
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about > div.txt ul.contact {
+    margin: 10px 0;
+  }
+}
+div.resume aside.about > div.txt ul.contact a {
+  color: #f1f1e4;
+}
+div.resume aside.about > div.txt ul.contact li:last-of-type {
+  margin-top: 5px;
+}
+div.resume aside.about > div.txt ul.whatido {
+  margin-top: 5px;
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about > div.txt ul.whatido {
+    display: grid;
+    grid-template-columns: 50% 50%;
+  }
+}
+div.resume aside.about > div.txt ul.whatido li {
+  padding: 2px;
+}
+@media only screen and (max-width: 790px) {
+  div.resume aside.about > div.txt ul.whatido li {
+    display: flex;
+    align-items: center;
+  }
+}
+div.resume aside.about > div.txt ul.whatido li.js::after {
+  content: "ironically no JS was used here";
+  width: auto;
+  display: inline-block;
+  opacity: 0;
+  background-color: #ed6a5a;
+  height: auto;
+  border-radius: 3px;
+  color: #f1f1e4;
+  padding: 2px;
+  margin-left: 10px;
+  transition: 0.2s all ease;
+  white-space: nowrap;
+  z-index: 99999;
+}
+div.resume aside.about > div.txt ul.whatido li.js:hover::after {
+  opacity: 1;
+  transition: 0.2s all ease;
+}
+div.resume footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 10%;
+  z-index: 3;
+}
+@media only screen and (max-width: 790px) {
+  div.resume footer {
+    position: initial;
+    background-color: #ed6a5a;
+    height: 50px;
+  }
+}
+div.resume footer p {
+  z-index: 3;
+  position: absolute;
+}
+@media only screen and (max-width: 790px) {
+  div.resume footer p {
+    position: initial;
+  }
+}
+div.resume footer::before {
+  content: "";
+  position: absolute;
+  bottom: -70px;
+  width: 110%;
+  height: 80px;
+  transform: rotate(-5deg);
+  background-color: #ed6a5a;
+  z-index: 3;
+}
+@media only screen and (max-width: 790px) {
+  div.resume footer::before {
+    display: none;
+  }
+}
+div.resume footer ul {
+  display: flex;
+  justify-content: flex-end;
+  width: 100%;
+  z-index: 9999;
+}
+@media only screen and (max-width: 790px) {
+  div.resume footer ul {
+    justify-content: center;
+  }
+}
+div.resume footer ul a {
+  font-size: 2.5em;
+  margin: 30px;
+  transition: 0.2s all ease;
+}
+@media only screen and (max-width: 835px) {
+  div.resume footer ul a {
+    margin: 15px;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume footer ul a {
+    margin: 30px;
+  }
+}
+div.resume footer ul a:hover {
+  color: #f1f1e4;
+}
+
+div.sun {
+  height: 150px;
+  width: 150px;
+  border-radius: 150px;
+  background-color: #fdca40;
+  position: absolute;
+  bottom: 0;
+  margin-bottom: 0;
+  left: 20%;
+  box-shadow: 0 0 50px 20px rgba(253, 202, 64, 0.8);
+  transition: all 0.7s linear;
+}
+@media only screen and (max-width: 790px) {
+  div.sun {
+    display: none;
+  }
+}
+
+header:hover ~ .sun {
+  position: absolute;
+  margin-bottom: 35%;
+  transition: all 0.7s linear;
+  transform: translateX(80px);
+}
