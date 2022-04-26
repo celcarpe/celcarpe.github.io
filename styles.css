@@ -212,10 +212,18 @@ div.resume section.experience div {
 }
 div.resume section.experience div:first-of-type {
   margin-right: 20px;
+  max-height: 450px;
+  overflow-y: scroll;
 }
 @media only screen and (max-width: 1250px) {
   div.resume section.experience div:first-of-type {
     margin-right: 0;
+  }
+}
+@media only screen and (max-width: 790px) {
+  div.resume section.experience div:first-of-type {
+    max-height: 100%;
+    overflow-y: inherit;
   }
 }
 @media only screen and (max-width: 1250px) {
